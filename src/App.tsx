@@ -1,6 +1,5 @@
 import SrtEditor from "./components/srt-editor";
 import SrtText from "./components/srt-text";
-import { Button } from "./components/ui/button";
 
 function App() {
 	return (

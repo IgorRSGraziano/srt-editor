@@ -1,15 +1,22 @@
+import { useSrtStore } from "../contexts/srt-context";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Textarea } from "../ui/textarea";
+import SrtBlock from "./block";
 
 type Props = {};
 
 function SrtEditor({}: Props) {
+	const { srt } = useSrtStore();
 	return (
 		<Card className="w-full">
 			<CardHeader>
 				<CardTitle>SRT Blocks</CardTitle>
 			</CardHeader>
-			<CardContent>TODO!</CardContent>
+			<CardContent>
+				{!srt.length && <div className="text-center text-gray-500">No SRT blocks</div>}
+				{srt.map((s) => (
+					<SrtBlock srt={s} key={s.id} />
+				))}
+			</CardContent>
 		</Card>
 	);
 }
