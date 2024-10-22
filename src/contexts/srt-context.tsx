@@ -5,6 +5,7 @@ type SrtState = {
 	srt: Srt[];
 	setSrt: (srt: Srt[]) => void;
 	addSrt: (srt: Srt) => void;
+	updateSrt: (id: string, srt: Srt) => void;
 };
 
 export const useSrtStore = create<SrtState>((set) => ({
@@ -18,4 +19,8 @@ export const useSrtStore = create<SrtState>((set) => ({
 	],
 	setSrt: (srt: Srt[]) => set({ srt }),
 	addSrt: (srt: Srt) => set((state) => ({ srt: [...state.srt, srt] })),
+	updateSrt: (id: string, srt: Srt) =>
+		set((state) => ({
+			srt: state.srt.map((s) => (s.id === id ? srt : s)),
+		})),
 }));
