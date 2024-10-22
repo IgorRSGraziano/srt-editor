@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Textarea } from "../ui/textarea";
 import { useSrtStore } from "../../contexts/srt-context";
 import { SrtParser } from "../../utils/srt";
@@ -17,14 +17,14 @@ function SrtText({}: Props) {
 		}
 	}, [value]);
 	return (
-		<Card className="w-full">
+		<div className="w-full">
 			<CardHeader>
 				<CardTitle>SRT Text</CardTitle>
 			</CardHeader>
 			<CardContent>
 				<Textarea className="w-full" placeholder="Enter your text here" onChange={(e) => setValue(e.target.value)} value={value} />
 			</CardContent>
-		</Card>
+		</div>
 	);
 }
 

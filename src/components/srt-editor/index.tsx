@@ -1,5 +1,5 @@
 import { useSrtStore } from "../../contexts/srt-context";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { CardContent, CardHeader, CardTitle } from "../ui/card";
 import SrtBlock from "./block";
 
 type Props = {};
@@ -7,7 +7,7 @@ type Props = {};
 function SrtEditor({}: Props) {
 	const { srt } = useSrtStore();
 	return (
-		<Card className="w-full">
+		<div className="w-full">
 			<CardHeader>
 				<CardTitle>SRT Blocks</CardTitle>
 			</CardHeader>
@@ -17,7 +17,7 @@ function SrtEditor({}: Props) {
 					<SrtBlock srt={s} key={s.id} />
 				))}
 			</CardContent>
-		</Card>
+		</div>
 	);
 }
 
