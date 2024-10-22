@@ -1,4 +1,4 @@
-import { useSrtStore } from "../contexts/srt-context";
+import { useSrtStore } from "../../contexts/srt-context";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import SrtBlock from "./block";
 

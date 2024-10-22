@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Srt } from "../../types/srt";
+import { Srt } from "../types/srt";
 
 type SrtState = {
 	srt: Srt[];
