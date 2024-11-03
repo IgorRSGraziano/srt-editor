@@ -4,7 +4,6 @@ import { useSrtStore } from "../../contexts/srt-context";
 // import { SrtParser } from "../../utils/srt";
 import { AutosizeTextarea } from "../ui/autosize-textarea";
 import SrtParser from "srt-parser-2";
-import { SrtLine } from "../../types/srt";
 
 type Props = {};
 
@@ -22,6 +21,7 @@ function SrtText({}: Props) {
 	}, [value]);
 
 	React.useEffect(() => {
+		if (!srt.length) return;
 		const parser = new SrtParser();
 		setValue(parser.toSrt(srt));
 	}, [srt]);
