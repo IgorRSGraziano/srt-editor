@@ -1,6 +1,8 @@
-export type Srt = {
+export type SrtLine = {
 	id: string;
-	start: number;
-	end: number;
+	startTime: string;
+	startSeconds: number;
+	endTime: string;
+	endSeconds: number;
 	text: string;
 };
